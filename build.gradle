@@ -1,0 +1,16 @@
+import dev.jbang.gradle.tasks.JBangTask
+
+plugins {
+    id 'dev.jbang' version '0.4.0'
+}
+
+tasks.register('generateAdrToc', JBangTask) {
+    // the JBang "script" to run (can be a GAV, script path, or alias)
+    script = 'adr@adoble'
+
+    // arguments passed to the script
+    args = ['generate', 'toc']
+
+    // optional: ensure JBang is installed/used from the Gradle cache
+    // version = 'latest' // uncomment to pin a JBang version
+}
